@@ -1,0 +1,38 @@
+[
+   {
+      "id": "1",
+      "orgName":"American Community Gardening Association",
+      "website":"https://communitygarden.org/",
+      "orgType":"Non-Profit Organization",
+      "foodResource":"N/A",
+      "farming":"space, education, research",
+      "legislation":"N/A"
+   },
+   {
+      "id": "2",
+      "orgName":"Friends Service Committee, Roots for Peace: Building Healthy Communities program",
+      "website":"http://www.afsc.org/office/los-angeles-ca",
+      "orgType":"Non-Profit Organization, Religious",
+      "foodResource":"N/A",
+      "farming":"space, education",
+      "legislation":"N/A"
+   },
+   {
+      "id": "3",
+      "orgName":"California Association of Food Banks",
+      "website":"http://www.cafoodbanks.org/advocacy",
+      "orgType":"Non-Profit Organization",
+      "foodResource":"N/A",
+      "farming":"space,",
+      "legislation":"N/A"
+   },
+   {
+      "id": "4",
+      "orgName":"CA Association of Food Banks, Farm to Family",
+      "website":"http://www.cafoodbanks.org/farm-family",
+      "orgType":"Non-Profit Organization",
+      "foodResource":"forSale, forFree",
+      "farming":"N/A",
+      "legislation":"N/A"
+   }
+]

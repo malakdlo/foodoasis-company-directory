@@ -1,0 +1,84 @@
+<section class="artistpage">  
+  <!--<div class="search">
+    <h1>Company Directory</h1>
+    <label>search: </label>
+    <input ng-model="query" type="text" placeholder="Search for companies" autofocus>
+  </div>-->
+  <div class="clearfix"></div>
+  <div class="categoryButtons">
+    <!-- For Category Checkboxes -->
+    <h1 ng-hide="foodResourceCheckbox || farmingCheckbox || legisCheckbox">Step 1: Choose which category you want to see options for</h1>
+    <h1 ng-show="foodResourceCheckbox || farmingCheckbox || legisCheckbox">Step 2: Select the topics you would like to search for.</h1>
+    <div class="row">
+      <label for="farmingCheckbox" ng-hide="foodResourceCheckbox || legisCheckbox">Farming</label>
+      <input type="checkbox" ng-model="farmingCheckbox" ng-init="farmingCheckbox = false" ng-hide="foodResourceCheckbox || legisCheckbox">
+      <label for="foodResourceCheckbox" ng-hide="farmingCheckbox || legisCheckbox">Food Resources</label>
+      <input type="checkbox" ng-model="foodResourceCheckbox" ng-init="foodResourceCheckbox = false" ng-hide="farmingCheckbox || legisCheckbox">
+      <!--<label for="legisCheckbox" ng-hide="farmingCheckbox || foodResourceCheckbox">Legislation</label>
+      <input type="checkbox" ng-model="legisCheckbox" ng-init="legisCheckbox = false" ng-hide="farmingCheckbox || foodResourceCheckbox">-->
+    </div>
+    
+    <!-- Category Filter Buttons -->
+    <div class="row">
+      <div class="col-md-4" ng-if="foodResourceCheckbox">
+        <form ng-submit="searchValues()" novalidate>
+          <div class="btn-group">
+            <label class="btn btn-primary" ng-click="" ng-model="foodModel.forSale" uib-btn-checkbox>For Sale</label>
+            <label class="btn btn-primary" ng-model="foodModel.forFree" uib-btn-checkbox>For Free</label>
+            <label class="btn btn-primary" ng-model="foodModel.subscription" uib-btn-checkbox>Subscription</label>
+            <label class="btn btn-primary" ng-model="foodModel.wholesale" uib-btn-checkbox>Wholesale</label>
+          </div>
+          <p>Search for any of the following: </p>
+          <ul>
+            <li ng-repeat="x in searchResults">{{x}}</li>
+            <!--<br/><span ng-show="foodModel.forSale">For Sale</span> 
+            <br/><span ng-show="foodModel.forFree">For Free</span> 
+            <br/><span ng-show="foodModel.subscription">Subscription</span>
+            <br/><span ng-show="foodModel.wholesale">Wholesale</span>-->
+          </ul>
+          <button type="submit" value="Search">Search Food</button>
+          <button type="button" ng-click="clearValues()">Clear Search</button>
+        </form>
+      </div>
+      
+      <div class="col-md-4" ng-if="farmingCheckbox">
+        <form ng-submit="searchValues()">
+          <div class="btn-group">
+            <label class="btn btn-primary" ng-model="farmingModel.space" uib-btn-checkbox>Gardening Space</label>
+            <label class="btn btn-primary" ng-model="farmingModel.supply" uib-btn-checkbox>Supply</label>
+            <label class="btn btn-primary" ng-model="farmingModel.education" uib-btn-checkbox>Education</label>
+            <label class="btn btn-primary" ng-model="farmingModel.advocacy" uib-btn-checkbox>Advocacy</label>
+            <label class="btn btn-primary" ng-model="farmingModel.research" uib-btn-checkbox>Research</label>
+        </div>
+        <button type="submit" value="Search">Search Farming</button>
+          <button type="button" ng-click="clearValues()">Clear Search</button>
+      </form> 
+      </div>
+      
+      <div class="col-md-4" ng-if="legisCheckbox">
+        <div class="btn-group">
+          <label class="btn btn-primary" ng-model="legisModel.inProgress" uib-btn-checkbox>In Progress</label>
+          <label class="btn btn-primary" ng-model="legisModel.adopted" uib-btn-checkbox>Adopted</label>
+      </div>
+      </div>
+    </div>
+      
+  </div>
+  
+  <!-- To Do -->
+  <!-- A) Create a custom filter that only returns the objects in which an item of xModel is found in the object.resources array -->
+  <!-- B) Contains -->
+  <!-- C) Concatenate then search -->
+  
+  <ul class="artistlist" ng-show="searchV">
+    <li class="artist cf" ng-repeat="item in organizations | filter: searchV">
+      <a href="#/details/{{organizations.indexOf(item)}}">
+        <div class="info">
+          <h2>{{item.orgName}}</h2>
+          <h3>{{item.website}}</h3>
+          <p>{{item.orgType}}</p>
+        </div>
+      </a>
+    </li>
+  </ul>  
+</section>

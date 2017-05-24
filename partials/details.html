@@ -1,0 +1,12 @@
+<section class="artistinfo">
+  <div class="artist cf" ng-model="organizations">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{organizations[whichItem].orgName}}</h1>
+    <div class="info">
+      <h3>{{organizations[whichItem].website}}</h3>
+      <h2>{{organizations[whichItem].orgType}}</h2>
+    </div>
+  </div>
+  <a href="index.html">&laquo; Back to search</a>
+</section>
